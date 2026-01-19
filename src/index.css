@@ -1,0 +1,23 @@
+#root {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+input {
+  border: black 1px solid;
+  outline: none;
+  background: transparent;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  border: 1px solid rgb(148, 145, 145);
+}

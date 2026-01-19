@@ -1,0 +1,67 @@
+header {
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.headcont {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 20px;
+  max-width: 100%;
+}
+
+.brand {
+  margin: 0;
+  font-size: 20px;
+  color: #333;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.nav {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.nav-center {
+  list-style: none;
+  display: flex;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+  justify-content: center;
+}
+
+.nav-right {
+  list-style: none;
+  display: flex;
+  gap: 12px;
+  margin-left: auto;
+  padding: 0;
+}
+
+.register-button {
+  padding: 6px 12px;
+  background-color: #ff3c00;
+  color: white !important;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.nav-center a,
+.nav-right a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 1000;
+  transition: color 0.2s;
+}
+
+.nav-center a:hover,
+.nav-right a:hover {
+  color: #e63600;
+}

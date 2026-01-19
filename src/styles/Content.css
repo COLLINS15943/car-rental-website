@@ -1,0 +1,250 @@
+.content {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 2rem;
+  margin-top: 8rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 900px;
+  width: 100%;
+}
+
+.contentLeft {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.contentLeft h2 {
+  margin: 0 0 0.5rem 0;
+  color: #666;
+  font-size: 1rem;
+}
+
+.contentLeft h1 {
+  margin: 0 0 1rem 0;
+  font-size: 72px;
+  color: #000;
+}
+
+.description {
+  margin-bottom: 1.5rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.buttonsContainer {
+  display: flex;
+  gap: 1rem;
+}
+
+.contentRight {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+}
+
+.carImage {
+  width: 130%;
+  height: 130%;
+  object-fit: contain;
+  max-width: none;
+  display: block;
+  transform: scaleX(-1);
+}
+
+.bookBtn {
+  background-color: #ff3c00;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.learnBtn {
+  background-color: #000000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.booking {
+  padding: 3rem 2rem;
+  margin-top: 3rem;
+}
+
+.booking-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.booking-container h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.booking-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.form-group input {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.form-group select {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-family: inherit;
+  background-color: white;
+  cursor: pointer;
+}
+
+.form-group select:focus {
+  outline: none;
+  border-color: #ff3c00;
+  box-shadow: 0 0 5px rgba(255, 60, 0, 0.3);
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #ff3c00;
+  box-shadow: 0 0 5px rgba(255, 60, 0, 0.3);
+}
+
+.search-btn {
+  grid-column: 1 / -1;
+  background-color: #ff3c00;
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.search-btn:hover {
+  background-color: #e63500;
+}
+
+.plan-section {
+  padding: 4rem 2rem;
+  background-color: #fff;
+}
+
+.plan-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.plan-container h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #000;
+  margin-bottom: 0.5rem;
+}
+
+.plan-subtext {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 3rem;
+}
+
+.car-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin: 0 auto 1rem;
+  color: #ff3c00;
+  font-size: 2.5rem;
+  z-index: 1;
+}
+
+.plan-card .car-icon {
+  font-size: 2rem;
+  width: 2rem;
+  height: 2rem;
+  margin-bottom: 0.8rem;
+}
+
+.plan-card .contact-icon {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  margin: 0 auto 0.8rem;
+  fill: #ff3c00;
+}
+
+.plan-card .drive-icon {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  margin: 0 auto 0.8rem;
+  fill: #ff3c00;
+}
+
+.plan-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.plan-card {
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s;
+}
+
+.plan-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.plan-card h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.plan-card p {
+  color: #666;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}

@@ -1,0 +1,152 @@
+.vehicle-models {
+  padding: 4rem 2rem;
+  background-color: #f9f9f9;
+}
+
+.vehicle-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.vehicle-container h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #000;
+  margin-bottom: 0.5rem;
+}
+
+.vehicle-subtext {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 3rem;
+}
+
+.vehicle-display {
+  display: grid;
+  grid-template-columns: 200px 1fr 300px;
+  gap: 2rem;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.vehicle-sidebar {
+  border-right: 2px solid #eee;
+  padding-right: 1rem;
+}
+
+.vehicle-sidebar h3 {
+  font-size: 1.1rem;
+  color: #333;
+  margin: 0 0 1rem 0;
+}
+
+.vehicle-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.vehicle-list li {
+  margin-bottom: 0.8rem;
+}
+
+.vehicle-name-btn {
+  width: 100%;
+  padding: 0.8rem;
+  border: 2px solid #ddd;
+  background-color: white;
+  color: #333;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s;
+  text-align: left;
+}
+
+.vehicle-name-btn:hover {
+  border-color: #ff3c00;
+  color: #ff3c00;
+}
+
+.vehicle-name-btn.active {
+  background-color: #ff3c00;
+  color: white;
+  border-color: #ff3c00;
+}
+
+.vehicle-image-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.vehicle-display-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.vehicle-image-title {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #333;
+  margin: 0;
+}
+
+.vehicle-specs {
+  border-left: 2px solid #eee;
+  padding-left: 1rem;
+}
+
+.vehicle-specs h3 {
+  font-size: 1.1rem;
+  color: #333;
+  margin: 0 0 1.5rem 0;
+}
+
+.specs-table {
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.specs-table tr {
+  border-bottom: 1px solid #eee;
+}
+
+.spec-label {
+  font-weight: 600;
+  color: #666;
+  padding: 0.8rem 0;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.spec-value {
+  color: #333;
+  padding: 0.8rem 0;
+  text-align: right;
+  font-weight: 500;
+}
+
+.reserve-btn {
+  width: 100%;
+  background-color: #ff3c00;
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.reserve-btn:hover {
+  background-color: #e63500;
+}

@@ -1,3 +1,4 @@
+import "../styles/VehicleModels.css";
 import { useState } from "react";
 
 const VehicleModels = () => {
@@ -5,69 +6,78 @@ const VehicleModels = () => {
     {
       id: 1,
       name: "Economy",
-      description: "Compact & Fuel Efficient",
-      price: "$40/day",
-      year: 2024,
-      doors: 4,
-      ac: "Yes",
-      fuel: "Petrol",
-      image: "./src/images/economy.png",
+      image: "/images/economy.png",
+      price: "$25",
+      specs: {
+        seats: "4",
+        transmission: "Manual",
+        airConditioning: "Yes",
+        doors: "2",
+        fuelType: "Petrol",
+        luggage: "1 Large bag"
+      },
+      description: "Compact & Fuel Efficient"
     },
     {
       id: 2,
-      name: "Sedan",
-      description: "Comfortable & Stylish",
-      price: "$60/day",
-      year: 2024,
-      doors: 4,
-      ac: "Yes",
-      fuel: "Petrol",
-      image: "https://via.placeholder.com/400x300?text=Sedan",
+      name: "SUV",
+      image: "/images/SUV.png",
+      price: "$45",
+      specs: {
+        seats: "7",
+        transmission: "Automatic",
+        airConditioning: "Yes",
+        doors: "5",
+        fuelType: "Petrol/Diesel",
+        luggage: "3 Large bags"
+      },
+      description: "Spacious & Powerful"
     },
     {
       id: 3,
-      name: "SUV",
-      description: "Spacious & Powerful",
-      price: "$80/day",
-      year: 2024,
-      doors: 4,
-      ac: "Yes",
-      fuel: "Diesel",
-      image: "https://via.placeholder.com/400x300?text=SUV",
+      name: "Luxury",
+      image: "/images/luxury.png",
+      price: "$75",
+      specs: {
+        seats: "5",
+        transmission: "Automatic",
+        airConditioning: "Premium Climate",
+        doors: "4",
+        fuelType: "Premium Petrol",
+        luggage: "2 Large bags"
+      },
+      description: "Premium & High-end"
     },
     {
       id: 4,
-      name: "Luxury",
-      description: "Premium & High-end",
-      price: "$120/day",
-      year: 2024,
-      doors: 4,
-      ac: "Yes",
-      fuel: "Petrol",
-      image: "https://via.placeholder.com/400x300?text=Luxury",
+      name: "Van",
+      image: "/images/van.png",
+      price: "$55",
+      specs: {
+        seats: "8",
+        transmission: "Automatic",
+        airConditioning: "Yes",
+        doors: "4",
+        fuelType: "Diesel",
+        luggage: "5 Large bags"
+      },
+      description: "Large & Family-friendly"
     },
     {
       id: 5,
-      name: "Van",
-      description: "Large & Family-friendly",
-      price: "$100/day",
-      year: 2023,
-      doors: 3,
-      ac: "Yes",
-      fuel: "Diesel",
-      image: "https://via.placeholder.com/400x300?text=Van",
-    },
-    {
-      id: 6,
       name: "Sports",
-      description: "Fast & Thrilling",
-      price: "$150/day",
-      year: 2024,
-      doors: 2,
-      ac: "Yes",
-      fuel: "Petrol",
-      image: "https://via.placeholder.com/400x300?text=Sports",
-    },
+      image: "/images/sports.png",
+      price: "$95",
+      specs: {
+        seats: "2",
+        transmission: "Manual/Automatic",
+        airConditioning: "Yes",
+        doors: "2",
+        fuelType: "Premium Petrol",
+        luggage: "1 Small bag"
+      },
+      description: "Fast & Thrilling"
+    }
   ];
 
   const [selectedVehicle, setSelectedVehicle] = useState(vehicles[0]);
@@ -75,69 +85,63 @@ const VehicleModels = () => {
   return (
     <section className="vehicle-models">
       <div className="vehicle-container">
-        <h2>Our Vehicle Models</h2>
-        <p className="vehicle-subtext">
-          Choose from our wide range of vehicles
-        </p>
-
+        <h2>Vehicle Models</h2>
+        <p className="vehicle-subtext">Choose from our diverse fleet</p>
+        
         <div className="vehicle-display">
-          {/* Left: Vehicle Names */}
-          <div className="vehicle-sidebar">
-            <h3>Select a Vehicle</h3>
-            <ul className="vehicle-list">
-              {vehicles.map((vehicle) => (
-                <li key={vehicle.id}>
-                  <button
-                    className={`vehicle-name-btn ${
-                      selectedVehicle.id === vehicle.id ? "active" : ""
-                    }`}
-                    onClick={() => setSelectedVehicle(vehicle)}
-                  >
-                    {vehicle.name}
-                  </button>
-                </li>
-              ))}
-            </ul>
+          {/* Left: Vehicle Buttons */}
+          <div className="vehicle-buttons">
+            {vehicles.map((vehicle) => (
+              <button
+                key={vehicle.id}
+                className={`vehicle-btn ${selectedVehicle.id === vehicle.id ? 'active' : ''}`}
+                onClick={() => setSelectedVehicle(vehicle)}
+              >
+                {vehicle.name}
+              </button>
+            ))}
           </div>
 
-          {/* Middle: Vehicle Image */}
-          <div className="vehicle-image-section">
-            <img
-              src={selectedVehicle.image}
-              alt={selectedVehicle.name}
-              className="vehicle-display-image"
-            />
-            <p className="vehicle-image-title">{selectedVehicle.name}</p>
+          {/* Middle: Car Display */}
+          <div className="vehicle-image-display">
+            <img src={selectedVehicle.image} alt={selectedVehicle.name} />
+            <div className="vehicle-price-only">
+              <span className="display-price">{selectedVehicle.price}<span className="period">/day</span></span>
+            </div>
+            <button className="rent-now-btn">Rent Now</button>
           </div>
 
-          {/* Right: Vehicle Specifications Table */}
+          {/* Right: Specifications Table */}
           <div className="vehicle-specs">
-            <h3>Specifications</h3>
+            <h4>Specifications</h4>
             <table className="specs-table">
               <tbody>
                 <tr>
-                  <td className="spec-label">Rent per Day</td>
-                  <td className="spec-value">{selectedVehicle.price}</td>
+                  <td>Seats</td>
+                  <td>{selectedVehicle.specs.seats}</td>
                 </tr>
                 <tr>
-                  <td className="spec-label">Model Year</td>
-                  <td className="spec-value">{selectedVehicle.year}</td>
+                  <td>Transmission</td>
+                  <td>{selectedVehicle.specs.transmission}</td>
                 </tr>
                 <tr>
-                  <td className="spec-label">Doors</td>
-                  <td className="spec-value">{selectedVehicle.doors}</td>
+                  <td>Air Conditioning</td>
+                  <td>{selectedVehicle.specs.airConditioning}</td>
                 </tr>
                 <tr>
-                  <td className="spec-label">AC</td>
-                  <td className="spec-value">{selectedVehicle.ac}</td>
+                  <td>Doors</td>
+                  <td>{selectedVehicle.specs.doors}</td>
                 </tr>
                 <tr>
-                  <td className="spec-label">Fuel Type</td>
-                  <td className="spec-value">{selectedVehicle.fuel}</td>
+                  <td>Fuel Type</td>
+                  <td>{selectedVehicle.specs.fuelType}</td>
+                </tr>
+                <tr>
+                  <td>Luggage</td>
+                  <td>{selectedVehicle.specs.luggage}</td>
                 </tr>
               </tbody>
             </table>
-            <button className="reserve-btn">Reserve Now</button>
           </div>
         </div>
       </div>

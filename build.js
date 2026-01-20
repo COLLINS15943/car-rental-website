@@ -3,32 +3,36 @@
 const { execSync } = require('child_process');
 const path = require('path');
 
+console.log('🚀 Starting custom build process...');
+
 try {
-  console.log('Starting build process...');
-  
   // Try different approaches to run vite build
-  const vitePath = path.join(__dirname, 'node_modules', '.bin', 'vite');
+  console.log('📦 Attempting Vite build...');
   
   try {
-    // First try: direct node execution
-    execSync(`node ${vitePath} build`, { stdio: 'inherit' });
+    // First try: using npx with latest vite
+    console.log('Method 1: Using npx with latest Vite...');
+    execSync('npx --yes vite@latest build', { stdio: 'inherit' });
+    console.log('✅ Build completed successfully with npx!');
   } catch (error) {
-    console.log('Direct execution failed, trying alternative...');
+    console.log('❌ npx method failed, trying direct execution...');
     
     try {
-      // Second try: using require
+      // Second try: direct node execution
+      const vitePath = path.join(__dirname, 'node_modules', '.bin', 'vite');
+      execSync(`node ${vitePath} build`, { stdio: 'inherit' });
+      console.log('✅ Build completed successfully with direct execution!');
+    } catch (error2) {
+      console.log('❌ Direct execution failed, trying Vite API...');
+      
+      // Third try: using Vite API
       const { build } = require('vite');
       await build();
-    } catch (error2) {
-      console.log('Vite API failed, trying npx...');
-      
-      // Third try: npx with explicit path
-      execSync('npx --yes vite@latest build', { stdio: 'inherit' });
+      console.log('✅ Build completed successfully with Vite API!');
     }
   }
   
-  console.log('Build completed successfully!');
 } catch (error) {
-  console.error('Build failed:', error.message);
+  console.error('💥 All build methods failed:', error.message);
   process.exit(1);
 }

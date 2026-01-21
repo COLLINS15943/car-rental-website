@@ -87,7 +87,7 @@ const VehicleModels = () => {
       <div className="vehicle-container">
         <h2>Vehicle Models</h2>
         <p className="vehicle-subtext">Choose from our diverse fleet</p>
-        
+
         <div className="vehicle-display">
           {/* Left: Vehicle Buttons */}
           <div className="vehicle-buttons">
@@ -104,7 +104,9 @@ const VehicleModels = () => {
 
           {/* Middle: Car Display */}
           <div className="vehicle-image-display">
-            <img src={selectedVehicle.image} alt={selectedVehicle.name} />
+            <div className="vehicle-image-container">
+              <img src={selectedVehicle.image} alt={selectedVehicle.name} />
+            </div>
             <div className="vehicle-price-only">
               <span className="display-price">{selectedVehicle.price}<span className="period">/day</span></span>
             </div>

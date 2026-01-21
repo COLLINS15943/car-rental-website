@@ -1,4 +1,24 @@
 
+.vehicle-models {
+  padding: 4rem 2rem;
+  background-color: #f8f9fa;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.vehicle-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.vehicle-container h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #000;
+  margin-bottom: 0.5rem;
+}
+
 .vehicle-subtext {
   text-align: center;
   font-size: 1.1rem;
@@ -53,21 +73,31 @@
 .vehicle-image-display {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 1rem;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem;
   border-radius: 8px;
+  min-height: 280px;
+}
+
+.vehicle-image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+  width: 100%;
+  margin-bottom: 0.75rem;
 }
 
 .vehicle-image-display img {
   max-width: 100%;
   max-height: 100%;
-  margin-bottom: 1rem;
+  object-fit: contain;
+  transition: transform 0.3s ease;
 }
 
 /* Specific styling for luxury car to make it larger */
 .vehicle-image-display img[src="/images/luxury.jpg"] {
-  max-height: 250px;
   transform: scale(1.2);
 }
 
@@ -152,11 +182,28 @@
     flex-direction: row;
     overflow-x: auto;
     gap: 0.5rem;
+    padding-bottom: 0.5rem;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+  }
+  
+  .vehicle-buttons::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
   }
   
   .vehicle-btn {
-    min-width: 200px;
+    min-width: 150px;
     flex-shrink: 0;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+  }
+  
+  .vehicle-image-display {
+    min-height: 250px;
+  }
+  
+  .vehicle-image-container {
+    height: 120px;
   }
 }
 
@@ -171,13 +218,90 @@
   
   .vehicle-display {
     padding: 1rem;
+    gap: 1rem;
   }
   
   .vehicle-buttons {
     flex-direction: column;
+    overflow-x: visible;
   }
   
   .vehicle-btn {
     min-width: auto;
+    padding: 0.75rem;
+    font-size: 0.95rem;
+  }
+  
+  .vehicle-image-display {
+    min-height: 220px;
+    padding: 0.5rem;
+  }
+  
+  .vehicle-image-container {
+    height: 100px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .display-price {
+    font-size: 1.5rem;
+  }
+  
+  .rent-now-btn {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .vehicle-specs {
+    padding: 0.75rem;
+  }
+  
+  .vehicle-specs h4 {
+    font-size: 1.1rem;
+  }
+  
+  .specs-table td {
+    padding: 0.5rem 0;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .vehicle-models {
+    padding: 1.5rem 0.75rem;
+  }
+  
+  .vehicle-container h2 {
+    font-size: 1.75rem;
+  }
+  
+  .vehicle-subtext {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .vehicle-display {
+    padding: 0.75rem;
+  }
+  
+  .vehicle-btn {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+  }
+  
+  .vehicle-image-display {
+    min-height: 200px;
+  }
+  
+  .vehicle-image-container {
+    height: 80px;
+  }
+  
+  .display-price {
+    font-size: 1.3rem;
+  }
+  
+  .rent-now-btn {
+    padding: 0.5rem 1.25rem;
+    font-size: 0.85rem;
   }
 }

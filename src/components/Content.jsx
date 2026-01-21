@@ -9,12 +9,17 @@ const Content = ({ img }) => {
             Rent the car of your dreams, Unbeatable prizes, unlimited miles,
             flexible pick-up options and much more
           </div>
+          {/* Image for mobile - will be hidden on desktop */}
+          <div className="contentRight mobile-image">
+            <img src={img} alt="Car" className="carImage" />
+          </div>
           <div className="buttonsContainer">
             <button className="bookBtn">Book Now</button>
             <button className="learnBtn">Learn More</button>
           </div>
         </div>
-        <div className="contentRight">
+        {/* Image for desktop - will be hidden on mobile */}
+        <div className="contentRight desktop-image">
           <img src={img} alt="Car" className="carImage" />
         </div>
       </div>

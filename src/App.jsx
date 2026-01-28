@@ -14,9 +14,6 @@ function App() {
       <div id="home">
         <Content img="/images/carmain.png" />
       </div>
-      <div id="about">
-        {/* About section - you can add content here or use existing Content component */}
-      </div>
       <div id="vehicles">
         <VehicleModels />
       </div>
@@ -26,10 +23,12 @@ function App() {
       <div id="testimonials">
         <Testimonials />
       </div>
-      <div id="team">
+      <div id="faq">
         <FAQ />
       </div>
-      <Footer />
+      <div id="footer">
+        <Footer />
+      </div>
     </>
   );
 }

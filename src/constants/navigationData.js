@@ -9,7 +9,7 @@ export const NAVIGATION_ITEMS = [
   {
     id: 2,
     label: "About",
-    href: "#about",
+    href: "#faq",
     type: "main"
   },
   {
@@ -33,7 +33,7 @@ export const NAVIGATION_ITEMS = [
   {
     id: 6,
     label: "Contact",
-    href: "#contact",
+    href: "#footer",
     type: "main"
   }
 ];

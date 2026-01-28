@@ -9,6 +9,10 @@ const Header = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   const scrollToSection = (href) => {
     if (href.startsWith('#')) {
       const element = document.querySelector(href);

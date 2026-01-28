@@ -1,82 +1,81 @@
-
+/* Vehicle Models - Consistent Design System */
 .vehicle-models {
-  padding: 4rem 2rem;
-  background-color: #f8f9fa;
-  overflow-x: hidden;
-  width: 100%;
+  padding: var(--section-padding);
+  background-color: var(--color-bg-light);
 }
 
 .vehicle-container {
-  max-width: 1200px;
+  max-width: var(--max-width);
   margin: 0 auto;
-  width: 100%;
+  padding: 0 var(--container-padding);
 }
 
 .vehicle-container h2 {
-  text-align: center;
   font-size: 2.5rem;
-  color: #000;
-  margin-bottom: 0.5rem;
+  color: var(--color-text-primary);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: var(--spacing-sm);
 }
 
 .vehicle-subtext {
   text-align: center;
-  font-size: 1.1rem;
-  color: #666;
-  margin-bottom: 3rem;
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-xxxl);
 }
 
 .vehicle-display {
   display: grid;
   grid-template-columns: 300px 1fr 300px;
-  gap: 2rem;
-  background: white;
-  border-radius: 12px;
-  padding: 2rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  gap: var(--spacing-xl);
+  background: var(--color-bg-white);
+  border-radius: var(--border-radius);
+  padding: var(--card-padding);
+  box-shadow: 0 4px 12px var(--color-shadow);
 }
 
-/* Left: Vehicle Buttons */
+/* Vehicle Buttons */
 .vehicle-buttons {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: var(--spacing-sm);
 }
 
 .vehicle-btn {
-  background: #f8f9fa;
-  border: 2px solid #e9ecef;
-  border-radius: 8px;
-  padding: 1rem;
+  background: var(--color-bg-light);
+  border: 2px solid var(--color-border);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-md);
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
   text-align: center;
   font-size: 1.1rem;
   font-weight: 600;
-  color: #333;
+  color: var(--color-text-primary);
 }
 
 .vehicle-btn:hover {
-  border-color: #ff3c00;
-  background: #fff5f3;
-  color: #ff3c00;
+  border-color: var(--color-primary);
+  background: var(--color-primary-light);
+  color: var(--color-primary);
 }
 
 .vehicle-btn.active {
-  border-color: #ff3c00;
-  background: #ff3c00;
+  border-color: var(--color-primary);
+  background: var(--color-primary);
   color: white;
   box-shadow: 0 2px 8px rgba(255, 60, 0, 0.3);
 }
 
-/* Middle: Car Display */
+/* Vehicle Display */
 .vehicle-image-display {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 0.75rem;
-  border-radius: 8px;
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius);
   min-height: 280px;
 }
 
@@ -86,7 +85,7 @@
   justify-content: center;
   height: 150px;
   width: 100%;
-  margin-bottom: 0.75rem;
+  margin-bottom: var(--spacing-md);
 }
 
 .vehicle-image-display img {
@@ -96,53 +95,50 @@
   transition: transform 0.3s ease;
 }
 
-/* Specific styling for luxury car to make it larger */
-.vehicle-image-display img[src="/images/luxury.jpg"] {
-  transform: scale(1.2);
-}
-
 .vehicle-price-only {
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: var(--spacing-md);
 }
 
 .display-price {
   font-size: 2rem;
-  font-weight: bold;
-  color: #ff3c00;
+  font-weight: 700;
+  color: var(--color-primary);
 }
 
 .period {
   font-size: 1rem;
-  color: #666;
-  font-weight: normal;
+  color: var(--color-text-secondary);
+  font-weight: 400;
 }
 
 .rent-now-btn {
-  background-color: #ff3c00;
+  background-color: var(--color-primary);
   color: white;
   border: none;
   padding: 0.75rem 2rem;
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: all 0.3s ease;
 }
 
 .rent-now-btn:hover {
-  background-color: #e63500;
+  background-color: var(--color-primary-hover);
+  transform: translateY(-2px);
 }
 
-/* Right: Specifications Table */
+/* Specifications */
 .vehicle-specs {
-  padding: 1rem;
+  padding: var(--spacing-md);
 }
 
 .vehicle-specs h4 {
-  margin: 0 0 1rem 0;
-  color: #333;
+  margin: 0 0 var(--spacing-md) 0;
+  color: var(--color-text-primary);
   font-size: 1.3rem;
+  font-weight: 600;
   text-align: center;
 }
 
@@ -153,17 +149,18 @@
 
 .specs-table td {
   padding: 0.75rem 0;
-  border-bottom: 1px solid #e9ecef;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.95rem;
 }
 
 .specs-table td:first-child {
   font-weight: 600;
-  color: #555;
+  color: var(--color-text-secondary);
   width: 50%;
 }
 
 .specs-table td:last-child {
-  color: #333;
+  color: var(--color-text-primary);
   text-align: right;
 }
 
@@ -175,26 +172,26 @@
 @media (max-width: 1024px) {
   .vehicle-display {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: var(--spacing-lg);
   }
   
   .vehicle-buttons {
     flex-direction: row;
     overflow-x: auto;
-    gap: 0.5rem;
-    padding-bottom: 0.5rem;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE and Edge */
+    gap: var(--spacing-sm);
+    padding-bottom: var(--spacing-sm);
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
   
   .vehicle-buttons::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Opera */
+    display: none;
   }
   
   .vehicle-btn {
     min-width: 150px;
     flex-shrink: 0;
-    padding: 0.75rem 1rem;
+    padding: 0.75rem var(--spacing-md);
     font-size: 1rem;
   }
   
@@ -208,17 +205,13 @@
 }
 
 @media (max-width: 768px) {
-  .vehicle-models {
-    padding: 2rem 1rem;
-  }
-  
   .vehicle-container h2 {
     font-size: 2rem;
   }
   
   .vehicle-display {
-    padding: 1rem;
-    gap: 1rem;
+    padding: var(--spacing-md);
+    gap: var(--spacing-md);
   }
   
   .vehicle-buttons {
@@ -234,12 +227,12 @@
   
   .vehicle-image-display {
     min-height: 220px;
-    padding: 0.5rem;
+    padding: var(--spacing-sm);
   }
   
   .vehicle-image-container {
     height: 100px;
-    margin-bottom: 0.5rem;
+    margin-bottom: var(--spacing-sm);
   }
   
   .display-price {
@@ -260,23 +253,19 @@
   }
   
   .specs-table td {
-    padding: 0.5rem 0;
+    padding: var(--spacing-sm) 0;
     font-size: 0.9rem;
   }
 }
 
 @media (max-width: 480px) {
-  .vehicle-models {
-    padding: 1.5rem 0.75rem;
-  }
-  
   .vehicle-container h2 {
     font-size: 1.75rem;
   }
   
   .vehicle-subtext {
     font-size: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: var(--spacing-xl);
   }
   
   .vehicle-display {

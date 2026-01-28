@@ -1,12 +1,100 @@
-import React from "react";
+import "../styles/Footer.css";
+import { FOOTER_DATA, APP_DOWNLOAD } from "../constants/footerData";
 
 const Footer = () => {
   return (
-    <footer
-      style={{ backgroundColor: "#f0f0f0", padding: "1rem", marginTop: "2rem" }}
-    >
-      <p>&copy; 2023 My React App. All rights reserved.</p>
-    </footer>
+    <>
+      {/* App Download Section */}
+      <section className="app-download-section">
+        <div className="app-download-container">
+          <div className="app-download-content">
+            <h2>{FOOTER_DATA.appSection.title}</h2>
+            <h3>{FOOTER_DATA.appSection.subtitle}</h3>
+            <p>{FOOTER_DATA.appSection.description}</p>
+            
+            <div className="download-buttons">
+              <a href={APP_DOWNLOAD.googlePlay.href} className="download-btn google-play">
+                <div className="btn-content">
+                  <span className="icon">{APP_DOWNLOAD.googlePlay.icon}</span>
+                  <div className="text-content">
+                    <span className="get-text">{APP_DOWNLOAD.googlePlay.text}</span>
+                    <span className="store-name">{APP_DOWNLOAD.googlePlay.store}</span>
+                  </div>
+                </div>
+              </a>
+              
+              <a href={APP_DOWNLOAD.appStore.href} className="download-btn app-store">
+                <div className="btn-content">
+                  <span className="icon">{APP_DOWNLOAD.appStore.icon}</span>
+                  <div className="text-content">
+                    <span className="get-text">{APP_DOWNLOAD.appStore.text}</span>
+                    <span className="store-name">{APP_DOWNLOAD.appStore.store}</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="footer">
+        <div className="footer-container">
+          <div className="footer-columns">
+            {/* Car Rental Column */}
+            <div className="footer-column">
+              <h3>{FOOTER_DATA.carRental.title}</h3>
+              <p>{FOOTER_DATA.carRental.description}</p>
+              <div className="contact-info">
+                <p>📞 {FOOTER_DATA.carRental.phone}</p>
+                <p>✉️ {FOOTER_DATA.carRental.email}</p>
+              </div>
+            </div>
+
+            {/* Company Column */}
+            <div className="footer-column">
+              <h3>{FOOTER_DATA.company.title}</h3>
+              <ul>
+                {FOOTER_DATA.company.links.map((link, index) => (
+                  <li key={index}>
+                    <a href={link.href}>{link.name}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Working Hours Column */}
+            <div className="footer-column">
+              <h3>{FOOTER_DATA.workingHours.title}</h3>
+              <div className="working-hours">
+                {FOOTER_DATA.workingHours.hours.map((schedule, index) => (
+                  <div key={index} className="hour-item">
+                    <span className="day">{schedule.day}</span>
+                    <span className="time">{schedule.time}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Subscription Column */}
+            <div className="footer-column">
+              <h3>{FOOTER_DATA.subscription.title}</h3>
+              <p>{FOOTER_DATA.subscription.description}</p>
+              <form className="subscription-form">
+                <input 
+                  type="email" 
+                  placeholder={FOOTER_DATA.subscription.placeholder}
+                  className="email-input"
+                />
+                <button type="submit" className="submit-btn">
+                  {FOOTER_DATA.subscription.buttonText}
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </>
   );
 };
 

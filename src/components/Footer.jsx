@@ -92,6 +92,14 @@ const Footer = () => {
               </form>
             </div>
           </div>
+          
+          {/* Copyright Section */}
+          <div className="footer-bottom">
+            <div className="copyright">
+              <p>&copy; {new Date().getFullYear()} Car Rental. All rights reserved.</p>
+              <p className="created-by">Created by <strong>Collins Agbo</strong></p>
+            </div>
+          </div>
         </div>
       </footer>
     </>

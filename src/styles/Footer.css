@@ -276,3 +276,26 @@
     font-size: 1rem;
   }
 }
+
+/* Footer Bottom / Copyright Section */
+.footer-bottom {
+  border-top: 1px solid #34495e;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  text-align: center;
+}
+
+.copyright p {
+  color: #bdc3c7;
+  font-size: 0.9rem;
+  margin: 0.25rem 0;
+}
+
+.created-by {
+  color: #ecf0f1;
+}
+
+.created-by strong {
+  color: #ff3c00;
+  font-weight: 600;
+}

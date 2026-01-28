@@ -11,11 +11,24 @@ function App() {
   return (
     <>
       <Header />
-      <Content img="/images/carmain.png" />
-      <VehicleModels />
-      <Contacts />
-      <Testimonials />
-      <FAQ />
+      <div id="home">
+        <Content img="/images/carmain.png" />
+      </div>
+      <div id="about">
+        {/* About section - you can add content here or use existing Content component */}
+      </div>
+      <div id="vehicles">
+        <VehicleModels />
+      </div>
+      <div id="contact">
+        <Contacts />
+      </div>
+      <div id="testimonials">
+        <Testimonials />
+      </div>
+      <div id="team">
+        <FAQ />
+      </div>
       <Footer />
     </>
   );

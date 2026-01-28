@@ -9,8 +9,22 @@ const Header = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const closeMenu = () => {
-    setIsMenuOpen(false);
+  const scrollToSection = (href) => {
+    if (href.startsWith('#')) {
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    }
+  };
+
+  const handleNavClick = (e, href) => {
+    e.preventDefault();
+    scrollToSection(href);
+    closeMenu();
   };
 
   const scrollToTop = () => {
@@ -37,7 +51,12 @@ const Header = () => {
           <ul className="nav-center"> 
             {NAVIGATION_ITEMS.map((item) => (
               <li key={item.id}>
-                <a href={item.href}>{item.label}</a>
+                <a 
+                  href={item.href}
+                  onClick={(e) => handleNavClick(e, item.href)}
+                >
+                  {item.label}
+                </a>
               </li>
             ))}
           </ul>
@@ -68,7 +87,7 @@ const Header = () => {
                   <a 
                     className={item.className || ""} 
                     href={item.href} 
-                    onClick={closeMenu}
+                    onClick={(e) => handleNavClick(e, item.href)}
                   >
                     {item.label}
                   </a>

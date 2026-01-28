@@ -3,37 +3,37 @@ export const NAVIGATION_ITEMS = [
   {
     id: 1,
     label: "Home",
-    href: "/",
+    href: "#home",
     type: "main"
   },
   {
     id: 2,
     label: "About",
-    href: "/about",
+    href: "#about",
     type: "main"
   },
   {
     id: 3,
     label: "Vehicle Models",
-    href: "/vehicles",
+    href: "#vehicles",
     type: "main"
   },
   {
     id: 4,
     label: "Testimonials",
-    href: "/testimonials",
+    href: "#testimonials",
     type: "main"
   },
   {
     id: 5,
     label: "Our Team",
-    href: "/our-team",
+    href: "#team",
     type: "main"
   },
   {
     id: 6,
     label: "Contact",
-    href: "/contact",
+    href: "#contact",
     type: "main"
   }
 ];

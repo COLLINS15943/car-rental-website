@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "../styles/Header.css";
+import { NAVIGATION_ITEMS, AUTH_ITEMS, HEADER_TEXT, getAllNavigationItems } from "../constants/navigationData";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,6 +13,31 @@ const Header = () => {
     setIsMenuOpen(false);
   };
 
+  const scrollToSection = (href) => {
+    if (href.startsWith('#')) {
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    }
+  };
+
+  const handleNavClick = (e, href) => {
+    e.preventDefault();
+    scrollToSection(href);
+    closeMenu();
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   return (
     <header>
       <div className="headcont">
@@ -22,58 +48,55 @@ const Header = () => {
           <span></span>
         </button>
 
-        <h1 className="brand">Car Rental</h1>
+        <h1 className="brand" onClick={scrollToTop}>{HEADER_TEXT.brand}</h1>
 
         {/* Desktop Navigation */}
         <nav className="nav desktop-nav">
-          <ul className="nav-center">
-            <li>
-              <a href="/">Home</a>
-            </li>
-            <li>
-              <a href="/about">About</a>
-            </li>
-            <li>
-              <a href="/contact">Vehicle Models</a>
-            </li>
-            <li>
-              <a href="/testimonials">Testimonials</a>
-            </li>
-            <li>
-              <a href="/our-team">Our Team</a>
-            </li>
-            <li>
-              <a href="/contact">Contact</a>
-            </li>
+          <ul className="nav-center"> 
+            {NAVIGATION_ITEMS.map((item) => (
+              <li key={item.id}>
+                <a 
+                  href={item.href}
+                  onClick={(e) => handleNavClick(e, item.href)}
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
           </ul>
           <ul className="nav-right">
-            <li>
-              <a href="/sign-in">Sign in</a>
-            </li>
-            <li>
-              <a className="register-button" href="/register">
-                Register
-              </a>
-            </li>
+            {AUTH_ITEMS.map((item) => (
+              <li key={item.id}>
+                <a 
+                  className={item.className} 
+                  href={item.href}
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
           </ul>
         </nav>
 
         {/* Mobile Slide Menu */}
         <div className={`mobile-menu ${isMenuOpen ? 'open' : ''}`}>
           <div className="mobile-menu-header">
-            <h2>Menu</h2>
-            <button className="close-btn" onClick={closeMenu}>×</button>
+            <h2>{HEADER_TEXT.mobileMenuTitle}</h2>
+            <button className="close-btn" onClick={closeMenu}>{HEADER_TEXT.closeButton}</button>
           </div>
           <nav className="mobile-nav">
             <ul>
-              <li><a href="/" onClick={closeMenu}>Home</a></li>
-              <li><a href="/about" onClick={closeMenu}>About</a></li>
-              <li><a href="/contact" onClick={closeMenu}>Vehicle Models</a></li>
-              <li><a href="/testimonials" onClick={closeMenu}>Testimonials</a></li>
-              <li><a href="/our-team" onClick={closeMenu}>Our Team</a></li>
-              <li><a href="/contact" onClick={closeMenu}>Contact</a></li>
-              <li><a href="/sign-in" onClick={closeMenu}>Sign in</a></li>
-              <li><a className="register-button" href="/register" onClick={closeMenu}>Register</a></li>
+              {getAllNavigationItems().map((item) => (
+                <li key={item.id}>
+                  <a 
+                    className={item.className || ""} 
+                    href={item.href} 
+                    onClick={(e) => handleNavClick(e, item.href)}
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </nav>
         </div>

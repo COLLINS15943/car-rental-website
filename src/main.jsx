@@ -4,6 +4,7 @@ import App from "./App.jsx";
 import "./index.css";
 import "./styles/Header.css";
 import "./styles/Content.css";
+import "./styles/VehicleModels.css";
 import "./styles/Contacts.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(

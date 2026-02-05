@@ -1,9 +1,13 @@
 import "../styles/VehicleModels.css";
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { VEHICLES, SPEC_LABELS, UI_TEXT } from "../constants/vehicleData";
 
 const VehicleModels = () => {
   const [selectedVehicle, setSelectedVehicle] = useState(VEHICLES[0]);
+
+  const handleVehicleSelect = useCallback((vehicle) => {
+    setSelectedVehicle(vehicle);
+  }, []);
 
   return ( 
     <>
@@ -19,7 +23,7 @@ const VehicleModels = () => {
                 <button
                   key={vehicle.id}
                   className={`vehicle-btn ${selectedVehicle.id === vehicle.id ? 'active' : ''}`}
-                  onClick={() => setSelectedVehicle(vehicle)}
+                  onClick={() => handleVehicleSelect(vehicle)}
                 >
                   {vehicle.name}
                 </button>
@@ -29,7 +33,12 @@ const VehicleModels = () => {
             {/* Middle: Car Display */}
             <div className="vehicle-image-display">
               <div className="vehicle-image-container">
-                <img src={selectedVehicle.image} alt={selectedVehicle.name} />
+                <img 
+                  key={selectedVehicle.id}
+                  src={selectedVehicle.image} 
+                  alt={selectedVehicle.name}
+                  loading="eager"
+                />
               </div>
               <div className="vehicle-price-only">
                 <span className="display-price">{selectedVehicle.price}<span className="period">{UI_TEXT.priceUnit}</span></span>

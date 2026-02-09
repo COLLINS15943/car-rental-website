@@ -13,20 +13,28 @@ const Footer = () => {
             <p>{FOOTER_DATA.appSection.description}</p>
             
             <div className="download-buttons">
-              <a href={APP_DOWNLOAD.googlePlay.href} className="download-btn-image">
+              <a href={APP_DOWNLOAD.googlePlay.href} className="download-btn">
                 <img 
                   src={APP_DOWNLOAD.googlePlay.image} 
-                  alt="Get it on Google Play"
-                  className="store-image"
+                  alt="Google Play"
+                  className="store-icon"
                 />
+                <div className="store-text">
+                  <span className="store-text-small">{APP_DOWNLOAD.googlePlay.text}</span>
+                  <span className="store-text-large">{APP_DOWNLOAD.googlePlay.store}</span>
+                </div>
               </a>
               
-              <a href={APP_DOWNLOAD.appStore.href} className="download-btn-image">
+              <a href={APP_DOWNLOAD.appStore.href} className="download-btn">
                 <img 
                   src={APP_DOWNLOAD.appStore.image} 
-                  alt="Download on the App Store"
-                  className="store-image"
+                  alt="App Store"
+                  className="store-icon"
                 />
+                <div className="store-text">
+                  <span className="store-text-small">{APP_DOWNLOAD.appStore.text}</span>
+                  <span className="store-text-large">{APP_DOWNLOAD.appStore.store}</span>
+                </div>
               </a>
             </div>
           </div>

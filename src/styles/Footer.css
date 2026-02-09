@@ -1,7 +1,7 @@
 /* App Download Section */
 .app-download-section {
   padding: 4rem 2rem;
-  background-color: #ffffff;
+  background-color: #f8f9fa;
   color: #333;
   text-align: center;
 }
@@ -42,25 +42,52 @@
   flex-wrap: wrap;
 }
 
-.download-btn-image {
-  display: inline-block;
-  transition: all 0.3s ease;
-}
-
-.download-btn-image:hover {
-  transform: translateY(-2px);
-  filter: brightness(1.1);
-}
-
-.store-image {
-  height: 60px;
-  width: auto;
+.download-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: #000000;
+  color: #ffffff;
+  padding: 0.75rem 1.5rem;
   border-radius: 8px;
+  text-decoration: none;
   transition: all 0.3s ease;
+  min-width: 200px;
 }
 
-.store-image:hover {
+.download-btn:hover {
+  transform: translateY(-3px);
+  background-color: #1a1a1a;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.store-icon {
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
+}
+
+.store-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.store-text-small {
+  font-size: 0.7rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1;
+}
+
+.store-text-large {
+  font-size: 1.3rem;
+  color: #ffffff;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-top: 0.1rem;
 }
 
 /* Footer */
@@ -207,10 +234,25 @@
   .download-buttons {
     justify-content: center;
     flex-wrap: wrap;
+    gap: 1rem;
   }
   
-  .store-image {
-    height: 50px;
+  .download-btn {
+    min-width: 180px;
+    padding: 0.65rem 1.25rem;
+  }
+  
+  .store-icon {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .store-text-small {
+    font-size: 0.65rem;
+  }
+  
+  .store-text-large {
+    font-size: 1.1rem;
   }
   
   .footer {
@@ -233,8 +275,22 @@
     font-size: 1.75rem;
   }
   
-  .store-image {
-    height: 45px;
+  .download-btn {
+    min-width: 160px;
+    padding: 0.6rem 1rem;
+  }
+  
+  .store-icon {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .store-text-small {
+    font-size: 0.6rem;
+  }
+  
+  .store-text-large {
+    font-size: 1rem;
   }
   
   .footer-column h3 {

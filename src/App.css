@@ -6,3 +6,8 @@
   width: 100%;
   overflow-x: hidden;
 }
+
+/* Home layout — account for fixed header */
+.home-layout {
+  padding-top: 70px;
+}

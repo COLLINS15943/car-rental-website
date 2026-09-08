@@ -1,69 +1,57 @@
-// Navigation constants
+// Navigation constants - Streamlined & Decluttered
 export const NAVIGATION_ITEMS = [
   {
-    id: 1,
+    id: "home",
     label: "Home",
-    href: "#home",
-    type: "main"
+    href: "#home"
   },
   {
-    id: 2,
-    label: "About",
-    href: "#faq",
-    type: "main"
+    id: "vehicles",
+    label: "Vehicles",
+    href: "#vehicles"
   },
   {
-    id: 3,
-    label: "Vehicle Models",
-    href: "#vehicles",
-    type: "main"
+    id: "why-us",
+    label: "Why Us",
+    href: "#why-us"
   },
   {
-    id: 4,
-    label: "Testimonials",
-    href: "#testimonials",
-    type: "main"
+    id: "testimonials",
+    label: "Reviews",
+    href: "#testimonials"
   },
   {
-    id: 5,
-    label: "Our Team",
-    href: "#team",
-    type: "main"
+    id: "faq",
+    label: "FAQ",
+    href: "#faq"
   },
   {
-    id: 6,
+    id: "contact",
     label: "Contact",
-    href: "#footer",
-    type: "main"
+    href: "#contact"
   }
 ];
 
 export const AUTH_ITEMS = [
   {
-    id: 1,
-    label: "Sign in",
-    href: "/sign-in",
-    type: "auth",
-    className: ""
-  },
-  {
-    id: 2,
-    label: "Register",
-    href: "/register",
-    type: "auth",
-    className: "register-button"
+    id: "sign-in",
+    label: "Sign In",
+    href: "#booking",
+    className: "auth-signin-btn"
   }
 ];
 
 // UI Text constants for Header
 export const HEADER_TEXT = {
-  brand: "Car Rental",
-  mobileMenuTitle: "Menu",
-  closeButton: "×"
+  brandFirst: "Drive",
+  brandAccent: "X",
+  brandFull: "Car Rental",
+  mobileMenuTitle: "Navigation",
+  closeButton: "✕"
 };
 
 // Helper function to get all navigation items for mobile menu
 export const getAllNavigationItems = () => [
   ...NAVIGATION_ITEMS,
   ...AUTH_ITEMS
-];
+];

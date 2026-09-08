@@ -1,69 +1,70 @@
 /* App Download Section */
 .app-download-section {
-  padding: 4rem 2rem;
+  padding: 4.5rem 2rem;
   background-color: #f8f9fa;
-  color: #333;
-  text-align: center;
+  width: 100%;
+  overflow: hidden;
 }
 
 .app-download-container {
-  max-width: 800px;
+  max-width: 1050px;
   margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3.5rem;
+}
+
+.app-download-content {
+  flex: 1.1;
+  text-align: left;
 }
 
 .app-download-content h2 {
-  font-size: 2.5rem;
-  color: #000;
-  margin-bottom: 0.5rem;
-  font-weight: 700;
-}
-
-.app-download-content h3 {
-  font-size: 1.2rem;
-  color: #666;
+  font-size: 2.35rem;
+  color: #000000;
+  font-weight: 800;
+  line-height: 1.25;
   margin-bottom: 1rem;
-  font-weight: 400;
 }
 
 .app-download-content p {
   font-size: 1rem;
-  color: #666;
-  line-height: 1.6;
-  margin-bottom: 2.5rem;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  color: #666666;
+  line-height: 1.65;
+  margin-bottom: 2rem;
+  max-width: 480px;
 }
 
 .download-buttons {
   display: flex;
-  justify-content: center;
-  gap: 1.5rem;
+  align-items: center;
+  gap: 1.25rem;
   flex-wrap: wrap;
 }
 
 .download-btn {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.85rem;
   background-color: #000000;
-  color: #ffffff;
-  padding: 0.75rem 1.5rem;
+  color: #ffffff !important;
+  padding: 0.75rem 1.4rem;
   border-radius: 8px;
   text-decoration: none;
-  transition: all 0.3s ease;
-  min-width: 200px;
+  transition: all 0.25s ease;
+  min-width: 185px;
 }
 
 .download-btn:hover {
-  transform: translateY(-3px);
-  background-color: #1a1a1a;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+  background-color: #222222;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .store-icon {
-  width: 35px;
-  height: 35px;
+  width: 32px;
+  height: 32px;
   object-fit: contain;
 }
 
@@ -83,240 +84,238 @@
 }
 
 .store-text-large {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: #ffffff;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.2;
-  margin-top: 0.1rem;
+  margin-top: 0.15rem;
+}
+
+.app-download-image {
+  flex: 0.9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-phone-img {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  border-radius: 28px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+  display: block;
 }
 
 /* Footer */
 .footer {
   background-color: #000000;
-  color: white;
-  padding: 3rem 2rem 2rem;
+  color: #ffffff;
+  padding: 4.5rem 2rem 2.5rem;
+  width: 100%;
 }
 
 .footer-container {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
 .footer-columns {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
-  gap: var(--spacing-lg);
+  grid-template-columns: 1.4fr 1fr 1.2fr 1.3fr;
+  gap: 3rem;
 }
 
 .footer-column h3 {
-  font-size: 1.1rem;
-  color: white;
-  margin-bottom: var(--spacing-sm);
+  font-size: 1.15rem;
+  color: #ffffff;
+  margin-bottom: 1.25rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
 }
 
 .footer-column p {
-  color: #bdc3c7;
+  color: #999999;
   line-height: 1.6;
-  margin-bottom: var(--spacing-sm);
-  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
 }
 
 .contact-info p {
   display: flex;
   align-items: center;
-  gap: var(--spacing-sm);
-  margin-bottom: var(--spacing-xs);
+  gap: 0.65rem;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+  font-weight: 500;
 }
 
 .footer-column ul {
   list-style: none;
   padding: 0;
   margin: 0;
-}
-
-.footer-column ul li {
-  margin-bottom: var(--spacing-xs);
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
 }
 
 .footer-column ul li a {
-  color: #bdc3c7;
+  color: #999999;
   text-decoration: none;
-  font-size: 0.9rem;
-  transition: color 0.3s ease;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
 }
 
 .footer-column ul li a:hover {
-  color: #ff3c00;
+  color: var(--color-primary, #ff3c00);
 }
 
 .working-hours {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-xs);
+  gap: 0.5rem;
 }
 
 .hour-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
 }
 
 .day {
-  color: #bdc3c7;
-  font-weight: 500;
+  color: #999999;
 }
 
 .time {
-  color: #ecf0f1;
+  color: #ffffff;
+  font-weight: 500;
 }
 
 .subscription-form {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-sm);
+  gap: 0.75rem;
 }
 
 .email-input {
-  padding: 0.75rem;
-  border: 1px solid #34495e;
+  padding: 0.85rem 1rem;
+  border: 1px solid #333333;
   border-radius: 4px;
-  background-color: #34495e;
-  color: white;
-  font-size: 0.9rem;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease;
 }
 
 .email-input::placeholder {
-  color: #95a5a6;
+  color: #777777;
 }
 
 .email-input:focus {
   outline: none;
-  border-color: #ff3c00;
-  background-color: #3c4f66;
+  border-color: var(--color-primary, #ff3c00);
 }
 
 .submit-btn {
-  padding: 0.75rem 1.5rem;
-  background-color: #ff3c00;
-  color: white;
+  padding: 0.85rem 1.5rem;
+  background-color: var(--color-primary, #ff3c00);
+  color: #ffffff;
   border: none;
   border-radius: 4px;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.2s ease;
 }
 
 .submit-btn:hover {
-  background-color: #e63500;
+  background-color: var(--color-primary-hover, #e63500);
 }
 
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-  .app-download-section {
-    padding: 3rem 1rem;
-  }
-  
-  .app-download-container {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    text-align: center;
-  }
-  
-  .app-download-content h2 {
-    font-size: 2rem;
-  }
-  
-  .download-buttons {
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-  
-  .download-btn {
-    min-width: 180px;
-    padding: 0.65rem 1.25rem;
-  }
-  
-  .store-icon {
-    width: 30px;
-    height: 30px;
-  }
-  
-  .store-text-small {
-    font-size: 0.65rem;
-  }
-  
-  .store-text-large {
-    font-size: 1.1rem;
-  }
-  
-  .footer {
-    padding: 2rem 1rem 1.5rem;
-  }
-  
-  .footer-columns {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  
-  .hour-item {
-    justify-content: flex-start;
-    gap: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .app-download-content h2 {
-    font-size: 1.75rem;
-  }
-  
-  .download-btn {
-    min-width: 160px;
-    padding: 0.6rem 1rem;
-  }
-  
-  .store-icon {
-    width: 28px;
-    height: 28px;
-  }
-  
-  .store-text-small {
-    font-size: 0.6rem;
-  }
-  
-  .store-text-large {
-    font-size: 1rem;
-  }
-  
-  .footer-column h3 {
-    font-size: 1rem;
-  }
-}
-
-/* Footer Bottom / Copyright Section */
+/* Footer Bottom / Copyright */
 .footer-bottom {
-  border-top: 1px solid #34495e;
-  margin-top: 2rem;
-  padding-top: 1.5rem;
+  border-top: 1px solid #222222;
+  margin-top: 3.5rem;
+  padding-top: 2rem;
   text-align: center;
 }
 
 .copyright p {
-  color: #bdc3c7;
+  color: #777777;
   font-size: 0.9rem;
   margin: 0.25rem 0;
 }
 
 .created-by {
-  color: #ecf0f1;
+  color: #888888;
 }
 
-.created-by strong {
-  color: #ff3c00;
+.portfolio-link {
+  color: var(--color-primary, #ff3c00);
   font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.portfolio-link:hover {
+  text-decoration: underline;
+  color: var(--color-primary-hover, #e63500);
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .app-download-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 2.5rem;
+  }
+
+  .app-download-content {
+    text-align: center;
+  }
+
+  .app-download-content p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .download-buttons {
+    justify-content: center;
+  }
+
+  .footer-columns {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 580px) {
+  .app-download-section {
+    padding: 3rem 1.25rem;
+  }
+
+  .app-download-content h2 {
+    font-size: 1.85rem;
+  }
+
+  .download-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .footer {
+    padding: 3rem 1.25rem 2rem;
+  }
+
+  .footer-columns {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .hour-item {
+    justify-content: flex-start;
+    gap: 1.5rem;
+  }
 }

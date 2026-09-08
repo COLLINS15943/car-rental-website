@@ -17,7 +17,7 @@
   --color-shadow: rgba(0, 0, 0, 0.1);
   
   /* Typography */
-  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   
   /* Spacing */
   --spacing-xs: 0.25rem;
@@ -51,7 +51,6 @@ body {
   background-color: var(--color-bg-white);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding-top: 70px; /* Account for fixed header */
 }
 
 /* Global Typography Classes */

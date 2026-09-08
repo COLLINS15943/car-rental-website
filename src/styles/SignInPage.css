@@ -1,0 +1,674 @@
+/* =============================================================
+   SignInPage — White & Orange, No-Scroll Fixed Layout
+   ============================================================= */
+
+/* ── Root — full viewport, no scroll ── */
+.sip-root {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  overflow: hidden;
+  font-family: var(--font-family, 'Plus Jakarta Sans', sans-serif);
+}
+
+/* ── FX canvas — particles on submit ── */
+.sip-fx-canvas {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* ═══════════════════════════════════════
+   LEFT PANEL — orange brand
+═══════════════════════════════════════ */
+.sip-panel {
+  position: relative;
+  flex: 0 0 42%;
+  background: linear-gradient(160deg, #ff3c00 0%, #ff6500 50%, #ff8800 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2.2rem 2.5rem;
+  overflow: hidden;
+}
+
+/* decorative circles */
+.sip-panel::before {
+  content: '';
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.07);
+  bottom: -150px;
+  right: -110px;
+  pointer-events: none;
+}
+.sip-panel::after {
+  content: '';
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.05);
+  top: -60px;
+  right: 30px;
+  pointer-events: none;
+}
+
+.sip-panel-bg-canvas {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Panel top section: logo ── */
+.sip-panel-top {
+  position: relative;
+  z-index: 1;
+}
+
+.sip-panel-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.sip-panel-logo-icon {
+  width: 40px;
+  height: 40px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  backdrop-filter: blur(4px);
+}
+.sip-panel-brand {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: white;
+  letter-spacing: -0.3px;
+}
+
+/* ── Panel middle section: headline ── */
+.sip-panel-mid {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sip-panel-heading {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: white;
+  line-height: 1.12;
+  letter-spacing: -1px;
+  margin-bottom: 0.9rem;
+  animation: sip-fade-up 0.7s 0.1s both;
+}
+.sip-panel-sub {
+  font-size: 0.92rem;
+  color: rgba(255,255,255,0.78);
+  line-height: 1.6;
+  max-width: 270px;
+  animation: sip-fade-up 0.7s 0.2s both;
+}
+
+/* ── Panel bottom section: feature list ── */
+.sip-panel-features {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.sip-panel-feature {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  animation: sip-fade-up 0.6s both;
+}
+.sip-panel-feature:nth-child(1) { animation-delay: 0.3s; }
+.sip-panel-feature:nth-child(2) { animation-delay: 0.4s; }
+.sip-panel-feature:nth-child(3) { animation-delay: 0.5s; }
+
+.sip-feature-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.9);
+  flex-shrink: 0;
+}
+.sip-feature-text {
+  font-size: 0.84rem;
+  color: rgba(255,255,255,0.82);
+  font-weight: 500;
+}
+
+/* ═══════════════════════════════════════
+   RIGHT PANEL — white form
+═══════════════════════════════════════ */
+.sip-form-side {
+  flex: 1;
+  background: #f7f7f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 1.5rem;
+}
+
+/* subtle grid texture */
+.sip-form-side::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,60,0,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,60,0,0.025) 1px, transparent 1px);
+  background-size: 30px 30px;
+  pointer-events: none;
+}
+
+/* ── Back button ── */
+.sip-back {
+  position: absolute;
+  top: 1.1rem;
+  left: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: white;
+  border: 1px solid #e4e4e8;
+  border-radius: 9999px;
+  color: #666;
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-family: inherit;
+  padding: 0.42rem 0.9rem 0.42rem 0.65rem;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+  transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.sip-back:hover {
+  background: #fff5f3;
+  border-color: rgba(255,60,0,0.3);
+  color: #ff3c00;
+  transform: translateX(-2px);
+  box-shadow: 0 3px 12px rgba(255,60,0,0.1);
+}
+
+/* ── Card ── */
+.sip-card {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: 400px;
+  background: white;
+  border: 1px solid #eaeaec;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow:
+    0 2px 4px rgba(0,0,0,0.04),
+    0 8px 32px rgba(0,0,0,0.07),
+    0 0 0 1px rgba(255,60,0,0.03);
+  transition: transform 0.07s linear, box-shadow 0.3s ease;
+  will-change: transform;
+  animation: sip-card-in 0.6s cubic-bezier(0.22,1,0.36,1) both;
+}
+@keyframes sip-card-in {
+  0%   { opacity:0; transform: perspective(900px) rotateX(12deg) translateY(30px) scale(0.95); }
+  100% { opacity:1; transform: perspective(900px) rotateX(0deg)  translateY(0)     scale(1);   }
+}
+
+.sip-card--shake {
+  animation: sip-shake 0.5s cubic-bezier(0.36,0.07,0.19,0.97) both !important;
+}
+@keyframes sip-shake {
+  10%,90%       { transform: perspective(900px) translateX(-4px); }
+  20%,80%       { transform: perspective(900px) translateX(6px); }
+  30%,50%,70%   { transform: perspective(900px) translateX(-8px); }
+  40%,60%       { transform: perspective(900px) translateX(8px); }
+  100%          { transform: perspective(900px) translateX(0); }
+}
+
+.sip-card--success {
+  border-color: rgba(255,60,0,0.18) !important;
+  box-shadow:
+    0 2px 4px rgba(0,0,0,0.04),
+    0 8px 32px rgba(0,0,0,0.07),
+    0 0 0 2px rgba(255,60,0,0.1) !important;
+}
+
+/* ── Top accent bar ── */
+.sip-accent-bar {
+  height: 4px;
+  background: linear-gradient(90deg, #ff3c00 0%, #ff7a00 50%, #ff3c00 100%);
+  background-size: 200% 100%;
+  animation:
+    sip-bar-grow    0.65s 0.15s cubic-bezier(0.22,1,0.36,1) both,
+    sip-bar-shimmer 3s   0.8s  linear infinite;
+}
+@keyframes sip-bar-grow {
+  from { transform: scaleX(0); transform-origin: left; }
+  to   { transform: scaleX(1); transform-origin: left; }
+}
+@keyframes sip-bar-shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position:-200% 0; }
+}
+
+/* ── Header ── */
+.sip-header {
+  padding: 1.4rem 1.7rem 0;
+  animation: sip-fade-up 0.5s 0.2s both;
+}
+@keyframes sip-fade-up {
+  from { opacity:0; transform:translateY(12px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+
+.sip-logo-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #ff3c00, #ff6a00);
+  color: white;
+  margin-bottom: 0.75rem;
+  box-shadow: 0 5px 18px rgba(255,60,0,0.28);
+  animation: sip-logo-pop 0.65s 0.35s cubic-bezier(0.34,1.56,0.64,1) both;
+}
+@keyframes sip-logo-pop {
+  from { transform: scale(0) rotate(-20deg); opacity:0; }
+  to   { transform: scale(1) rotate(0deg);  opacity:1; }
+}
+
+.sip-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #111;
+  letter-spacing: -0.4px;
+  margin-bottom: 0.2rem;
+  line-height: 1.2;
+}
+.sip-subtitle {
+  font-size: 0.82rem;
+  color: #999;
+}
+.sip-brand { color: #ff3c00; font-weight: 700; }
+
+/* ── Success ── */
+.sip-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 2rem 1.7rem;
+  animation: sip-fade-up 0.4s ease both;
+}
+.sip-checkmark {
+  width: 72px;
+  height: 72px;
+  animation: sip-logo-pop 0.5s cubic-bezier(0.34,1.56,0.64,1) both;
+}
+.sip-check-circle {
+  stroke-dasharray: 165; stroke-dashoffset: 165;
+  animation: sip-draw 0.5s 0.1s ease forwards;
+}
+.sip-check-tick {
+  stroke-dasharray: 42; stroke-dashoffset: 42;
+  animation: sip-draw 0.35s 0.5s ease forwards;
+}
+@keyframes sip-draw { to { stroke-dashoffset: 0; } }
+.sip-success-text {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #111;
+  animation: sip-fade-up 0.4s 0.7s both;
+}
+
+/* ── Form ── */
+.sip-form {
+  padding: 1rem 1.7rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  animation: sip-fade-up 0.5s 0.3s both;
+  transition: opacity 0.3s, filter 0.3s;
+}
+.sip-form--hidden {
+  opacity: 0;
+  filter: blur(4px);
+  pointer-events: none;
+}
+
+/* ── Field ── */
+.sip-field {
+  position: relative;
+  margin-bottom: 0.9rem;
+  width: 100%;
+}
+.sip-label {
+  display: block;
+  font-size: 0.73rem;
+  font-weight: 700;
+  color: #666;
+  letter-spacing: 0.4px;
+  margin-bottom: 0.32rem;
+  transition: color 0.2s;
+}
+.sip-field--focused .sip-label { color: #ff3c00; }
+.sip-field--err     .sip-label { color: #e53935; }
+
+.sip-input-wrap {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 0.55rem;
+  background: #f4f4f6;
+  border: 1.5px solid #e4e4e8;
+  border-radius: 9px;
+  padding: 0 0.85rem;
+  box-sizing: border-box;
+  transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+.sip-field--focused .sip-input-wrap {
+  background: #fff;
+  border-color: #ff3c00;
+  box-shadow: 0 0 0 3px rgba(255,60,0,0.1);
+}
+.sip-field--err .sip-input-wrap {
+  border-color: #e53935;
+  box-shadow: 0 0 0 3px rgba(229,57,53,0.1);
+}
+
+.sip-icon {
+  width: 15px; height: 15px;
+  flex-shrink: 0;
+  color: #ccc;
+  transition: color 0.2s;
+}
+.sip-field--focused .sip-icon { color: #ff3c00; }
+
+.sip-input {
+  flex: 1;
+  min-width: 0;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 0.72rem 0;
+  font-size: 0.9rem;
+  color: #111;
+  font-family: inherit;
+}
+.sip-input::placeholder { color: #bbbbc4; }
+.sip-input:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.sip-underline {
+  position: absolute;
+  bottom: 0; left: 0;
+  height: 2px; width: 0;
+  background: linear-gradient(90deg, #ff3c00, #ff7a00);
+  border-radius: 0 0 9px 9px;
+  transition: width 0.35s cubic-bezier(0.22,1,0.36,1);
+  pointer-events: none;
+}
+.sip-field--focused .sip-underline { width: 100%; }
+
+.sip-ripple {
+  position: absolute; inset: 0;
+  border-radius: 9px;
+  border: 1.5px solid rgba(255,60,0,0.4);
+  animation: sip-ripple-out 0.6s ease-out both;
+  pointer-events: none;
+}
+@keyframes sip-ripple-out {
+  0%   { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1.06); }
+}
+
+/* ── Eye toggle ── */
+.sip-eye {
+  background: none; border: none; cursor: pointer;
+  color: #ccc;
+  display: flex; align-items: center;
+  padding: 0; flex-shrink: 0;
+  transition: color 0.2s;
+}
+.sip-eye:hover { color: #ff3c00; }
+
+/* ── Forgot ── */
+.sip-forgot-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.05rem;
+  margin-bottom: 1rem;
+}
+.sip-forgot {
+  font-size: 0.76rem;
+  color: #aaa;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+.sip-forgot:hover { color: #ff3c00; }
+
+/* ── Submit ── */
+.sip-submit {
+  width: 100%;
+  padding: 0.85rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  font-family: inherit;
+  color: #fff;
+  background: linear-gradient(135deg, #ff3c00 0%, #ff6a00 100%);
+  border: none;
+  border-radius: 9px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.2px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 5px 18px rgba(255,60,0,0.3), 0 2px 5px rgba(0,0,0,0.08);
+}
+.sip-submit:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 9px 26px rgba(255,60,0,0.42), 0 2px 5px rgba(0,0,0,0.08);
+}
+.sip-submit:active { transform: scale(0.99); }
+.sip-submit:disabled { cursor: not-allowed; opacity: 0.8; }
+.sip-submit--loading { background: linear-gradient(135deg, #cc3300, #e05500); }
+.sip-submit--error {
+  background: linear-gradient(135deg, #e53935, #c62828);
+  animation: sip-error-pulse 0.45s ease;
+}
+@keyframes sip-error-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(229,57,53,0.5); }
+  70%  { box-shadow: 0 0 0 12px rgba(229,57,53,0); }
+  100% { box-shadow: 0 5px 18px rgba(255,60,0,0.3); }
+}
+
+.sip-shine {
+  position: absolute; top:0; left:-110%;
+  width:55%; height:100%;
+  background: linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent);
+  transform: skewX(-20deg);
+}
+.sip-submit:hover .sip-shine { animation: sip-shine-sweep 0.5s ease forwards; }
+@keyframes sip-shine-sweep { to { left: 160%; } }
+
+.sip-btn-inner {
+  display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+}
+.sip-arrow { transition: transform 0.25s; }
+.sip-submit:hover .sip-arrow { transform: translateX(4px); }
+
+.sip-spinner-row {
+  display: flex; align-items: center; justify-content: center; gap: 0.55rem;
+}
+.sip-spinner {
+  width: 15px; height: 15px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: sip-spin-anim 0.65s linear infinite;
+}
+@keyframes sip-spin-anim { to { transform: rotate(360deg); } }
+
+/* ── Separator ── */
+.sip-sep {
+  display: flex; align-items: center; gap: 0.65rem;
+  margin: 0.9rem 0 0.75rem;
+}
+.sip-sep::before,.sip-sep::after {
+  content:''; flex:1; height:1px; background:#eaeaee;
+}
+.sip-sep span { font-size: 0.72rem; color: #bbb; white-space: nowrap; font-weight: 500; }
+
+/* ── Social ── */
+.sip-social {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+}
+.sip-social-btn {
+  display: flex; align-items: center; justify-content: center; gap: 0.45rem;
+  padding: 0.65rem;
+  background: white;
+  border: 1.5px solid #e4e4e8;
+  border-radius: 9px;
+  color: #333;
+  font-family: inherit;
+  font-size: 0.84rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.sip-social-btn:hover {
+  background: #fff5f3;
+  border-color: rgba(255,60,0,0.28);
+  box-shadow: 0 3px 12px rgba(255,60,0,0.09);
+  transform: translateY(-1px);
+}
+
+/* ── Register hint ── */
+.sip-register {
+  text-align: center;
+  font-size: 0.79rem;
+  color: #aaa;
+  margin-top: 0.9rem;
+}
+.sip-register-link {
+  color: #ff3c00; text-decoration: none; font-weight: 700;
+  transition: color 0.2s;
+}
+.sip-register-link:hover { color: #cc2f00; text-decoration: underline; }
+
+/* ═══════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════ */
+
+/* ── Tablet / large phones: hide left panel, center form ── */
+@media (max-width: 780px) {
+  .sip-root {
+    position: fixed;
+    inset: 0;
+    display: block;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: #f7f7f9;
+  }
+
+  .sip-panel { display: none; }
+
+  .sip-form-side {
+    min-height: 100%;
+    width: 100%;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 1.5rem 2.5rem;
+    position: relative;
+  }
+
+  /* orange mini-header bar on mobile */
+  .sip-form-side::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #ff3c00, #ff7a00);
+    z-index: 20;
+  }
+
+  .sip-card {
+    width: 100%;
+    max-width: 440px;
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  }
+
+  .sip-header { padding: 1.4rem 1.5rem 0; }
+  .sip-form   { padding: 1rem 1.5rem 1.5rem; }
+
+  .sip-back {
+    position: fixed;
+    top: 0.8rem;
+    left: 1rem;
+    z-index: 21;
+  }
+}
+
+/* ── Small phones ── */
+@media (max-width: 480px) {
+  .sip-form-side { padding: 4.5rem 1rem 2rem; }
+
+  .sip-card {
+    border-radius: 12px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+  }
+
+  .sip-header { padding: 1.2rem 1.25rem 0; }
+  .sip-form   { padding: 0.9rem 1.25rem 1.25rem; }
+
+  .sip-title   { font-size: 1.35rem; }
+  .sip-subtitle { font-size: 0.8rem; }
+
+  .sip-logo-wrap {
+    width: 42px;
+    height: 42px;
+    border-radius: 11px;
+    margin-bottom: 0.65rem;
+  }
+
+  .sip-input { font-size: 0.875rem; }
+  .sip-submit { padding: 0.82rem 1rem; font-size: 0.9rem; }
+}
+
+/* ── Very small phones (360px and below) ── */
+@media (max-width: 360px) {
+  .sip-social { grid-template-columns: 1fr; }
+  .sip-form-side { padding: 4rem 0.75rem 1.5rem; }
+  .sip-header { padding: 1rem 1rem 0; }
+  .sip-form   { padding: 0.8rem 1rem 1rem; }
+  .sip-title  { font-size: 1.25rem; }
+}

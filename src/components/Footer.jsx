@@ -9,7 +9,6 @@ const Footer = () => {
         <div className="app-download-container">
           <div className="app-download-content">
             <h2>{FOOTER_DATA.appSection.title}</h2>
-            <h3>{FOOTER_DATA.appSection.subtitle}</h3>
             <p>{FOOTER_DATA.appSection.description}</p>
             
             <div className="download-buttons">
@@ -37,6 +36,14 @@ const Footer = () => {
                 </div>
               </a>
             </div>
+          </div>
+
+          <div className="app-download-image">
+            <img 
+              src="/images/app-mockup.jpg" 
+              alt="Car Rental Mobile App" 
+              className="app-phone-img"
+            />
           </div>
         </div>
       </section>
@@ -84,7 +91,7 @@ const Footer = () => {
             <div className="footer-column">
               <h3>{FOOTER_DATA.subscription.title}</h3>
               <p>{FOOTER_DATA.subscription.description}</p>
-              <form className="subscription-form">
+              <form className="subscription-form" onSubmit={(e) => e.preventDefault()}>
                 <input 
                   type="email" 
                   placeholder={FOOTER_DATA.subscription.placeholder}
@@ -101,7 +108,17 @@ const Footer = () => {
           <div className="footer-bottom">
             <div className="copyright">
               <p>&copy; {new Date().getFullYear()} Car Rental. All rights reserved.</p>
-              <p className="created-by">Created by <strong>Collins Agbo</strong></p>
+              <p className="created-by">
+                Developed by{" "}
+                <a 
+                  href="https://mycollinsportfolio.netlify.app/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="portfolio-link"
+                >
+                  cadsix
+                </a>
+              </p>
             </div>
           </div>
         </div>
@@ -111,3 +128,5 @@ const Footer = () => {
 };
 
 export default Footer;
+
+

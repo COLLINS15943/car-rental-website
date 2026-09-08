@@ -11,7 +11,25 @@ export const TESTIMONIALS_DATA = [
   },
   {
     id: 2,
-    content: "The car was in great condition and made our trip even better. Professional service and excellent customer support throughout our rental period.",
+    content: "The customer service was top notch! The car was delivered right to my hotel spotless and fueled up. The whole rental process took less than 5 minutes.",
+    author: {
+      name: "Sarah Jenkins",
+      location: "London",
+      image: "/images/person2.jpg"
+    }
+  },
+  {
+    id: 3,
+    content: "Transparent pricing with zero hidden fees. Being able to pick up from the airport and drop off downtown saved me so much time during my business trip.",
+    author: {
+      name: "Kwame Mensah",
+      location: "Accra",
+      image: "/images/person3.jpg"
+    }
+  },
+  {
+    id: 4,
+    content: "The car was in pristine condition and made our road trip even better. Professional staff and reliable 24/7 support throughout our rental period.",
     author: {
       name: "Ron Bizley",
       location: "New York",
@@ -24,5 +42,5 @@ export const TESTIMONIALS_DATA = [
 export const TESTIMONIALS_TEXT = {
   subtitle: "Reviewed by People",
   title: "Client's Testimonials",
-  description: "Discover the positive impact we've made on our clients by reading through their testimonials. Our clients have experienced our service and results, and they're eager to share their positive experiences with you."
-};
+  description: "Discover the positive impact we've made on our clients by reading through their testimonials. Real experiences from real drivers around the world."
+};
